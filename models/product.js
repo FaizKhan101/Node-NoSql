@@ -28,6 +28,10 @@ class Product {
       .collection("products")
       .findOne({ _id: new ObjectId(id) });
   }
+
+  static deleteById(id) {
+    return db.getDb().collection("products").deleteOne({ _id: new ObjectId(id) })
+  }
 }
 
 module.exports = Product;
